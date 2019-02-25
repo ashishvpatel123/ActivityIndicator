@@ -10,11 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        activityIndicator.color = .black
+        activityIndicator.isHidden = true
+      
     }
 
-
+ 
+    @IBAction func startIndicator(_ sender: Any) {
+          activityIndicator.startAnimating()
+          activityIndicator.isHidden = false
+    }
+    
+    @IBAction func stopIndicator(_ sender: Any) {
+          activityIndicator.stopAnimating()
+          activityIndicator.isHidden = true
+    }
 }
 
