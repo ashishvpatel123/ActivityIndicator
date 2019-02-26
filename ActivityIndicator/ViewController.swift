@@ -22,19 +22,20 @@ class ViewController: UIViewController {
         activityIndicator.isHidden = true
         
         newIndicator.type = .circleStrokeSpin
-        newIndicator.color = UIColor.red
+        newIndicator.color = UIColor.black
         self.view.addSubview(newIndicator)
     
     }
 
  
     func initProperties(){
-        let frame = CGRect(x: 100 , y: 100, width: 50, height: 50)
+        let frame = CGRect(x: (UIScreen.main.bounds.width / 2) - 25 , y: 100, width: 50, height: 50)
         newIndicator = NVActivityIndicatorView(frame: frame)
     }
     
     @IBAction func startIndicator(_ sender: Any) {
           activityIndicator.startAnimating()
+          activityIndicator.backgroundColor = UIColor.black.withAlphaComponent(0.2)
           newIndicator.startAnimating()
           activityIndicator.isHidden = false
     }
